@@ -1,108 +1,82 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* style.css */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-header {
-  background-color: #914444;
-  color: white;
-  text-align: center;
-  padding: 2rem;
+.main-content {
+    flex: 1;
 }
 
-main {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.search-container {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-input {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 300px;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #444;
+.results-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 2rem;
 }
 
 .country-card {
-  background-color: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+    transition: transform 0.2s;
+    cursor: pointer;
 }
 
 .country-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .country-flag {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+    height: 200px;
+    object-fit: cover;
 }
 
-.country-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+.loading-indicator {
+    text-align: center;
+    padding: 2rem;
+    display: none;
 }
 
-.info-item {
-  margin-bottom: 0.5rem;
-  padding: 8px;
-  border-bottom: 1px solid #eee;
+.loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #0d6efd;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
 }
 
-.info-item:last-child {
-  border-bottom: none;
-}
-
-footer {
-    background-color: #3f3d97;
-    color: white;
+.error-message {
+    color: #dc3545;
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    display: none;
 }
 
-.search-error {
-    padding: 20px;
-    text-align: center;
-    color: #dc3545;
+.error-message i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .country-flag {
+        height: 150px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    #countryInput {
+        margin-bottom: 1rem;
+    }
+    
+    button {
+        width: 100%;
+    }
 }
