@@ -122,6 +122,7 @@ body {
     border-radius: 15px;
     box-shadow: var(--box-shadow);
     z-index: 1000;
+    display: none;
 }
 
 .suggestion-item {
@@ -135,7 +136,8 @@ body {
     gap: 1rem;
 }
 
-.suggestion-item:hover {
+.suggestion-item:hover,
+.suggestion-item.active {
     background: var(--background-color);
 }
 

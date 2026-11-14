@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Country Info and Data </title>
-    <link rel="icon" href="/images/logo.svg" type="image/jpg">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -22,10 +22,10 @@
                            placeholder="Search country..." 
                            autocomplete="off"
                            aria-label="Country search input">
-                    <button id="search-btn" class="search-button">
+                    <button id="search-btn" class="search-button" aria-label="Search">
                         <i class="fas fa-search"></i>
                     </button>
-                    <div id="suggestions-container" class="suggestions-dropdown"></div>
+                    <div id="suggestions-container" class="suggestions-dropdown" style="display: none;"></div>
                 </div>
             </div>
         </div>
@@ -55,6 +55,7 @@
         </div>
     </footer>
 
+    <script src="countries-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
